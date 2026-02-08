@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Only For You ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Poppins, sans-serif;background:linear-gradient(135deg,#ffb6c1,#ffd1dc);min-height:100vh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
+.container{max-width:920px;padding:32px;display:none}
+.container.active{display:block}
+h1{font-family:'Great Vibes',cursive;font-size:3.4rem;margin-bottom:18px}
+h2{font-weight:400;opacity:.95}
+p{font-size:1.12rem;line-height:1.9;opacity:.98}
+.btn{margin-top:28px;padding:13px 30px;border:none;border-radius:30px;background:#fff;color:#ff4f79;font-size:1rem;cursor:pointer;box-shadow:0 10px 20px rgba(0,0,0,.2)}
+input{padding:12px;border-radius:25px;border:none;width:230px;text-align:center;font-size:1rem}
+img{width:100%;max-width:340px;border-radius:22px;box-shadow:0 14px 28px rgba(0,0,0,.35);margin:18px}
+.choices{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.no{position:relative}
+.small{font-size:.95rem;opacity:.9}
+</style>
+</head>
+<body><!-- PAGE 1 PASSWORD --><div class="container active" id="page1">
+  <h1>Just Us, Prachi 🔒</h1>
+  <p>
+    This little space holds my heart, my feelings, and everything I struggle to say out loud.
+    It opens only for the one who owns my smile, my peace, and my world.
+  </p>
+  <p class="small">(Hint: the name that makes my heart skip a beat)</p>
+  <input type="password" id="pass" placeholder="Enter password" />
+  <br>
+  <button class="btn" onclick="checkPass()">Unlock My Heart ❤️</button>
+</div><!-- PAGE 2 OPENING + IMAGE --><div class="container" id="page2">
+  <h1>Hey… My Favorite Person, Babphant 🌷</h1>
+  <p>
+    If Valentine week made you feel even a little upset, unseen, or unloved,
+    I want you to know this first — it was never my intention.
+    Sometimes I fall short with words, sometimes I get things wrong,
+    but my love for you has never been confused or uncertain.
+  </p>
+  <p>
+    You are important to me in ways I can’t measure.
+    More than routines, more than days on a calendar,
+    more than gifts — you matter.
+  </p>
+  <img src="memory1.jpg" alt="us">
+  <br>
+  <button class="btn" onclick="nextPage(2)">Stay With Me 💞</button>
+</div><!-- PAGE 3 MORE ROMANTIC + IMAGE --><div class="container" id="page3">
+  <h1>What You Mean To Me ✨</h1>
+  <p>
+    You are my calm after chaos,
+    my soft thought before sleep,
+    and the smile that appears without permission.
+  </p>
+  <p>
+    With you, love feels gentle.
+    It feels safe.
+    It feels like home.
+    Even on difficult days, choosing you feels natural —
+    like breathing, like believing, like hope.
+  </p>
+  <img src="memory2.jpg" alt="love">
+  <br>
+  <button class="btn" onclick="nextPage(3)">I Have One Question… 💗</button>
+</div><!-- PAGE 4 YES / NO --><div class="container" id="page4">
+  <h1>So Tell Me, My Love 💍</h1>
+  <p>
+    Not just today, not just this week —
+    but in this moment where my heart is completely honest.
+  </p>
+  <h2>Will you be my Valentine? 💖</h2>
+  <div class="choices">
+    <button class="btn" onclick="nextPage(4)">YES ❤️</button>
+    <button class="btn no" onmouseover="moveNo(this)">NO 🙈</button>
+  </div>
+</div><!-- PAGE 5 FINAL --><div class="container" id="page5">
+  <h1>You Chose Us 🥹❤️</h1>
+  <p>
+    Thank you — for your love, your patience, your heart.
+    Thank you for choosing me even when I’m imperfect.
+  </p>
+  <p>
+    I promise to love you gently when you’re tired,
+    loudly when you doubt,
+    and honestly every single day.
+    This isn’t just a Valentine moment —
+    it’s my promise to keep choosing you.
+  </p>
+  <p class="small">My promise to you, Prachi: I’ll choose you in the calm, stand by you in the storms, and love you gently—every single day. 💍</p>
+</div><script>
+function checkPass(){
+  if(document.getElementById('pass').value==='sachi'){
+    nextPage(1)
+  }else{alert('That name lives in my heart… try again 💕')}
+}
+function nextPage(n){
+  document.getElementById('page'+n).classList.remove('active')
+  document.getElementById('page'+(n+1)).classList.add('active')
+}
+function moveNo(btn){
+  const x=Math.random()*240-120
+  const y=Math.random()*240-120
+  btn.style.transform=`translate(${x}px,${y}px)`
+}
+</script></body>
+</html>
